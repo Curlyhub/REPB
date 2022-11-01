@@ -131,7 +131,7 @@ def main(n_parallel=1, budget=1, n_rl_itr=1, n_cont_samples=10, seed=0,
         dqn.to()
         trainer = Trainer(snapshot_config=ctxt)
         trainer.setup(algo=dqn, env=env)
-        trainer.train(n_epochs=n_rl_itr, batch_size=n_parallel * budget)
+        trainer.train(n_epochs=n_rl_itr, batch_size=n_parallel * budget,plot=True)
 
     dqn_prey(n_parallel=n_parallel, budget=budget, n_rl_itr=n_rl_itr,
              n_cont_samples=n_cont_samples, seed=seed, qf_lr=qf_lr,
